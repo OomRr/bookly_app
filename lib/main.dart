@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'constants.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
+
 void main() {
   runApp(const BookyApp());
 }
+
 class BookyApp extends StatelessWidget {
   const BookyApp({super.key});
   @override
