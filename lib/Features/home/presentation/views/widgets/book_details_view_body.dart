@@ -23,7 +23,7 @@ class BookDetailsViewBody extends StatelessWidget {
                 const BookDetailsAppBar(),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: width.width * .25),
-                  child: const CustomBookImage(),
+                  child: const CustomBookImage(imageUrl: 'https://www.pakainfo.com/wp-content/uploads/2021/09/image-url-for-testing.jpg',),
                 ),
                 const SizedBox(
                   height: 43,
