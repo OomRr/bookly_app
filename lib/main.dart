@@ -1,3 +1,5 @@
+import 'package:bookly_app/Features/Search/data/repos/home_repo_implementation.dart';
+import 'package:bookly_app/Features/Search/presentation/manager/search_cubit/search_cubit.dart';
 import 'package:bookly_app/Features/home/data/repos/home_repo_implementation.dart';
 import 'package:bookly_app/Features/home/presentation/manager/featured_book_cubit/featured_books_cubit.dart';
 import 'package:bookly_app/Features/home/presentation/manager/news_books/news_books_cubit.dart';
@@ -31,6 +33,11 @@ class BookyApp extends StatelessWidget {
           create: (context) => NewsBooksCubit(
             getIt.get<HomeRepoImp>(),
           )..fetchNewsBooks(),
+        ),
+        BlocProvider(
+          create: (context) => SearchCubit(
+            getIt.get<HomeRepoImpSearch>(),
+          ),
         )
       ],
       child: MaterialApp.router(
