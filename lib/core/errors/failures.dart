@@ -34,10 +34,12 @@ class ServerFailure extends Failure {
         return ServerFailure('connection error');
 
       case DioExceptionType.unknown:
-        if(dioException.message!.contains('SocketException'))
+        if(dioException.message!=null){
+          if(dioException.message!.contains('SocketException'))
           {
             return ServerFailure('No Internet Connection');
           }
+        }
         return ServerFailure('unexpected error, try again');
         default:
           return ServerFailure('unknown error, try again');
