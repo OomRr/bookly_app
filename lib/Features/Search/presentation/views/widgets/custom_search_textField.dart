@@ -9,6 +9,9 @@ class CustomSearchTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onChanged: (data){
+        BlocProvider.of<SearchCubit>(context).fetchSearchBooks(searchKey: data);
+      },
           controller: searchController,
           decoration: InputDecoration(
               border: OutlineInputBorder(
@@ -22,6 +25,7 @@ class CustomSearchTextField extends StatelessWidget {
                   onPressed: ()
                   {
                     BlocProvider.of<SearchCubit>(context).fetchSearchBooks(searchKey: searchController.text);
+                    searchController.clear();
                   },
                   icon: const Icon(
                       FontAwesomeIcons.magnifyingGlass, size: 22))),

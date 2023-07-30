@@ -56,7 +56,7 @@ class BookDetailsViewBody extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'You can also like',
+                    'You may also like',
                     style: Styles.titleStyle14
                         .copyWith(fontWeight: FontWeight.w600),
                   ),

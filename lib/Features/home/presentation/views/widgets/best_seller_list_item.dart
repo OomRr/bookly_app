@@ -43,7 +43,7 @@ class BooksListVIewItem extends StatelessWidget {
                   const SizedBox(
                     height: 3,
                   ),
-                  Text(bookModel.volumeInfo.authors!.first,
+                  Text(bookModel.volumeInfo.authors?.first??'',
                       style: Styles.titleStyle14.copyWith(
                         color: Colors.grey,
                         fontWeight: FontWeight.w600,

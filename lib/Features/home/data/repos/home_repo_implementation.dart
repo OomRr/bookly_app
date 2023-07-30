@@ -15,7 +15,7 @@ class HomeRepoImp implements HomeRepo {
     try {
       var data = await apiService.get(
           endPint:
-              'volumes?Filtering=free-ebooks&Sorting=publishedDate &q=subject:programming');
+              'volumes?Filtering=free-ebooks&Sorting=newest &q=subject:programming');
       List<BookModel> books = [];
       for (var item in data['items']) {
         books.add(BookModel.fromJson(item));
@@ -33,7 +33,7 @@ class HomeRepoImp implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
       var data = await apiService.get(
-          endPint: 'volumes?Sorting=popular&q=subject:programming');
+          endPint: 'volumes?Filtering=free-ebooks&Sorting=popular&q=computer science');
       List<BookModel> books = [];
       for (var item in data['items']) {
         books.add(BookModel.fromJson(item));
@@ -71,7 +71,7 @@ class HomeRepoImp implements HomeRepo {
       }
       return left(
         ServerFailure(
-          e.toString(),
+          'no similar books for this books available'
         ),
       );
     }

@@ -15,7 +15,19 @@ class CustomBookImage extends StatelessWidget {
         child: CachedNetworkImage(
           fit: BoxFit.fill,
           imageUrl: imageUrl,
-          errorWidget: (context, url, error) => const Icon(Icons.error_rounded),
+          errorWidget: (context, url, error) => Container(
+            height: 100,
+            width: 60,
+            color: Colors.white,
+            child: const Center(
+                child: Text(
+              'Book!',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 30),
+            )),
+          ),
         ),
       ),
     );
