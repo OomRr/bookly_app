@@ -1,4 +1,5 @@
 import 'package:bookly_app/Features/home/presentation/manager/news_books/news_books_cubit.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -28,7 +29,7 @@ class BestSellerListView extends StatelessWidget {
         }else if (state is NewsBooksFailure){
           return CustomErrorWidget(errorMessage: state.errorMessage);
         }else{
-          return const CustomLoadingIndicator();
+          return shimmerLoading2();
         }
       },
     );

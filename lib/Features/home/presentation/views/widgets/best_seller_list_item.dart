@@ -44,15 +44,19 @@ class BooksListVIewItem extends StatelessWidget {
                     height: 3,
                   ),
                   Text(bookModel.volumeInfo.authors?.first??'',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                       style: Styles.titleStyle14.copyWith(
                         color: Colors.grey,
+
+
                         fontWeight: FontWeight.w600,
                       )),
                   const SizedBox(
                     height: 3,
                   ),
                   const SizedBox(
-                    height: 16,
+                    height: 30,
                   ),
                   Row(
                     children: [

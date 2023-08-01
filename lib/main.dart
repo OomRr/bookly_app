@@ -26,9 +26,7 @@ class BookyApp extends StatelessWidget {
           create: (context) => FeaturedBooksCubit(
             getIt.get<HomeRepoImp>(),
           )..fetchFeaturedBooks(),
-
         ),
-
         BlocProvider(
           create: (context) => NewsBooksCubit(
             getIt.get<HomeRepoImp>(),
@@ -41,7 +39,6 @@ class BookyApp extends StatelessWidget {
         )
       ],
       child: MaterialApp.router(
-
         routerConfig: AppRouter.router,
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark().copyWith(

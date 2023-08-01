@@ -1,4 +1,5 @@
 import 'package:bookly_app/Features/home/presentation/manager/featured_book_cubit/featured_books_cubit.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/shimmer.dart';
 import 'package:bookly_app/core/widgets/custom_error_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -43,7 +44,7 @@ class FeaturedBooksListView extends StatelessWidget {
         } else if (state is FeaturedBooksFailure) {
           return CustomErrorWidget(errorMessage: state.errorMessage);
         } else {
-          return const CustomLoadingIndicator();
+          return shimmerLoading(w: 120,h: 200);
         }
       },
     );
